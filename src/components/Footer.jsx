@@ -20,7 +20,7 @@ export default function Footer() {
               ].map(s => (
                 <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
                   style={{ width: 40, height: 40, background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', fontSize: 16, transition: 'border-color 0.2s' }}
-                  onMouseEnter={e => e.currentTarget.style.borderColor = 'rgba(249,115,22,0.4)'}
+                  onMouseEnter={e => e.currentTarget.style.borderColor = 'rgba(37,99,235,0.4)'}
                   onMouseLeave={e => e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)'}
                 >
                   {s.label}
@@ -36,7 +36,7 @@ export default function Footer() {
               {serviceLinks.map(s => (
                 <li key={s} style={{ marginBottom: 12 }}>
                   <a href="#servicios" style={{ color: 'rgba(255,255,255,0.38)', fontSize: 14, textDecoration: 'none', transition: 'color 0.2s' }}
-                    onMouseEnter={e => e.target.style.color = '#F97316'}
+                    onMouseEnter={e => e.target.style.color = '#2563EB'}
                     onMouseLeave={e => e.target.style.color = 'rgba(255,255,255,0.38)'}
                   >
                     {s}

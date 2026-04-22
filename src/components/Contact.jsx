@@ -8,10 +8,10 @@ function InfoRow({ emoji, label, value, href }) {
       borderRadius: 16, padding: '16px 20px', transition: 'border-color 0.2s',
       textDecoration: 'none', color: 'inherit',
     }}
-      onMouseEnter={e => e.currentTarget.style.borderColor = 'rgba(249,115,22,0.25)'}
+      onMouseEnter={e => e.currentTarget.style.borderColor = 'rgba(37,99,235,0.25)'}
       onMouseLeave={e => e.currentTarget.style.borderColor = 'rgba(255,255,255,0.07)'}
     >
-      <div style={{ width: 44, height: 44, borderRadius: 12, background: 'rgba(249,115,22,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 20, flexShrink: 0 }}>
+      <div style={{ width: 44, height: 44, borderRadius: 12, background: 'rgba(37,99,235,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 20, flexShrink: 0 }}>
         {emoji}
       </div>
       <div>
@@ -35,19 +35,19 @@ export default function Contact() {
 
   return (
     <section id="contacto" style={{ padding: '100px 24px', position: 'relative', overflow: 'hidden' }}>
-      <div style={{ position: 'absolute', right: -100, top: '50%', width: 500, height: 500, borderRadius: '50%', background: 'rgba(249,115,22,0.05)', filter: 'blur(80px)', transform: 'translateY(-50%)', pointerEvents: 'none' }} />
+      <div style={{ position: 'absolute', right: -100, top: '50%', width: 500, height: 500, borderRadius: '50%', background: 'rgba(37,99,235,0.05)', filter: 'blur(80px)', transform: 'translateY(-50%)', pointerEvents: 'none' }} />
 
       <div style={{ maxWidth: 1280, margin: '0 auto', position: 'relative' }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'start' }} className="contact-grid">
 
           {/* Info */}
           <motion.div initial={{ opacity: 0, x: -32 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-            <div style={{ display: 'inline-block', background: 'rgba(249,115,22,0.1)', border: '1px solid rgba(249,115,22,0.25)', color: '#F97316', fontSize: 11, fontWeight: 700, padding: '6px 16px', borderRadius: 100, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 20 }}>
+            <div style={{ display: 'inline-block', background: 'rgba(37,99,235,0.1)', border: '1px solid rgba(37,99,235,0.25)', color: '#2563EB', fontSize: 11, fontWeight: 700, padding: '6px 16px', borderRadius: 100, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 20 }}>
               Contáctanos
             </div>
             <h2 style={{ fontFamily: 'Syne, sans-serif', fontSize: 'clamp(28px, 4vw, 48px)', fontWeight: 800, lineHeight: 1.1, marginBottom: 16, letterSpacing: '-0.02em' }}>
               Hablemos de tu{' '}
-              <span style={{ background: 'linear-gradient(135deg, #F97316, #FBBF24)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>próximo proyecto</span>
+              <span style={{ background: 'linear-gradient(135deg, #2563EB, #60A5FA)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>próximo proyecto</span>
             </h2>
             <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: 16, lineHeight: 1.75, marginBottom: 36 }}>
               Cotiza sin compromiso. Respondemos en menos de 24 horas y te asesoramos en el proceso de personalización.
@@ -63,7 +63,7 @@ export default function Contact() {
             <div style={{ display: 'flex', gap: 10, marginTop: 28 }}>
               <a href="https://www.instagram.com/marquillas_etiquetas/" target="_blank" rel="noopener noreferrer"
                 style={{ display: 'flex', alignItems: 'center', gap: 8, background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.65)', padding: '10px 20px', borderRadius: 100, fontSize: 13, fontWeight: 500, textDecoration: 'none', transition: 'border-color 0.2s' }}
-                onMouseEnter={e => e.currentTarget.style.borderColor = 'rgba(249,115,22,0.3)'}
+                onMouseEnter={e => e.currentTarget.style.borderColor = 'rgba(37,99,235,0.3)'}
                 onMouseLeave={e => e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)'}
               >
                 📸 Instagram
@@ -81,7 +81,7 @@ export default function Contact() {
           {/* Form */}
           <motion.div initial={{ opacity: 0, x: 32 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
             <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 24, padding: '36px 32px', position: 'relative', overflow: 'hidden' }}>
-              <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at 0% 0%, rgba(249,115,22,0.06), transparent 60%)', pointerEvents: 'none' }} />
+              <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at 0% 0%, rgba(37,99,235,0.06), transparent 60%)', pointerEvents: 'none' }} />
               <h3 style={{ fontFamily: 'Syne, sans-serif', fontWeight: 700, fontSize: 22, marginBottom: 28, position: 'relative' }}>Solicita una cotización</h3>
 
               <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 16, position: 'relative' }}>
@@ -91,7 +91,7 @@ export default function Contact() {
                       <label style={{ display: 'block', color: 'rgba(255,255,255,0.35)', fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 8 }}>{f.ph}</label>
                       <input name={f.name} type="text" placeholder={f.ph} required={f.required}
                         style={{ width: '100%', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 12, padding: '12px 14px', color: '#fff', fontSize: 14, outline: 'none', transition: 'border-color 0.2s' }}
-                        onFocus={e => e.target.style.borderColor = 'rgba(249,115,22,0.5)'}
+                        onFocus={e => e.target.style.borderColor = 'rgba(37,99,235,0.5)'}
                         onBlur={e => e.target.style.borderColor = 'rgba(255,255,255,0.1)'}
                       />
                     </div>
@@ -102,7 +102,7 @@ export default function Contact() {
                   <label style={{ display: 'block', color: 'rgba(255,255,255,0.35)', fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 8 }}>Servicio de interés</label>
                   <select name="servicio"
                     style={{ width: '100%', background: '#111', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 12, padding: '12px 14px', color: 'rgba(255,255,255,0.7)', fontSize: 14, outline: 'none', transition: 'border-color 0.2s' }}
-                    onFocus={e => e.target.style.borderColor = 'rgba(249,115,22,0.5)'}
+                    onFocus={e => e.target.style.borderColor = 'rgba(37,99,235,0.5)'}
                     onBlur={e => e.target.style.borderColor = 'rgba(255,255,255,0.1)'}
                   >
                     <option value="">Seleccionar...</option>
@@ -116,14 +116,14 @@ export default function Contact() {
                   <label style={{ display: 'block', color: 'rgba(255,255,255,0.35)', fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 8 }}>Descripción del pedido</label>
                   <textarea name="desc" rows={4} placeholder="Cuéntanos sobre tu proyecto, cantidad, materiales, etc."
                     style={{ width: '100%', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 12, padding: '12px 14px', color: '#fff', fontSize: 14, outline: 'none', resize: 'none', fontFamily: 'inherit', transition: 'border-color 0.2s' }}
-                    onFocus={e => e.target.style.borderColor = 'rgba(249,115,22,0.5)'}
+                    onFocus={e => e.target.style.borderColor = 'rgba(37,99,235,0.5)'}
                     onBlur={e => e.target.style.borderColor = 'rgba(255,255,255,0.1)'}
                   />
                 </div>
 
                 <button type="submit"
-                  style={{ width: '100%', background: '#F97316', color: '#fff', border: 'none', borderRadius: 14, padding: '16px', fontSize: 15, fontWeight: 700, cursor: 'pointer', fontFamily: 'inherit', transition: 'all 0.2s', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8 }}
-                  onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.02)'; e.currentTarget.style.boxShadow = '0 12px 40px rgba(249,115,22,0.4)' }}
+                  style={{ width: '100%', background: '#2563EB', color: '#fff', border: 'none', borderRadius: 14, padding: '16px', fontSize: 15, fontWeight: 700, cursor: 'pointer', fontFamily: 'inherit', transition: 'all 0.2s', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8 }}
+                  onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.02)'; e.currentTarget.style.boxShadow = '0 12px 40px rgba(37,99,235,0.4)' }}
                   onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = 'none' }}
                 >
                   💬 Enviar por WhatsApp

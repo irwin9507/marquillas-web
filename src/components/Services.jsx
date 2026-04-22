@@ -28,7 +28,7 @@ function Card({ s, i }) {
         border: '1px solid rgba(255,255,255,0.08)',
         cursor: 'pointer', transition: 'border-color 0.3s, transform 0.3s',
       }}
-      whileHover={{ scale: 1.02, borderColor: 'rgba(249,115,22,0.35)' }}
+      whileHover={{ scale: 1.02, borderColor: 'rgba(37,99,235,0.35)' }}
     >
       <div style={{ position: 'relative', height: 200, overflow: 'hidden' }}>
         <img src={s.img} alt={s.name} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.6s' }}
@@ -37,7 +37,7 @@ function Card({ s, i }) {
         />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%)' }} />
         {s.tag && (
-          <span style={{ position: 'absolute', top: 14, left: 14, background: '#F97316', color: '#fff', fontSize: 10, fontWeight: 700, padding: '4px 10px', borderRadius: 100, letterSpacing: '0.06em' }}>
+          <span style={{ position: 'absolute', top: 14, left: 14, background: '#2563EB', color: '#fff', fontSize: 10, fontWeight: 700, padding: '4px 10px', borderRadius: 100, letterSpacing: '0.06em' }}>
             {s.tag}
           </span>
         )}
@@ -61,12 +61,12 @@ export default function Services() {
     <section id="servicios" style={{ padding: '100px 24px' }}>
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>
         <motion.div ref={ref} initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}} style={{ marginBottom: 56 }}>
-          <div style={{ display: 'inline-block', background: 'rgba(249,115,22,0.1)', border: '1px solid rgba(249,115,22,0.25)', color: '#F97316', fontSize: 11, fontWeight: 700, padding: '6px 16px', borderRadius: 100, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 20 }}>
+          <div style={{ display: 'inline-block', background: 'rgba(37,99,235,0.1)', border: '1px solid rgba(37,99,235,0.25)', color: '#2563EB', fontSize: 11, fontWeight: 700, padding: '6px 16px', borderRadius: 100, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 20 }}>
             Nuestros Servicios
           </div>
           <h2 style={{ fontFamily: 'Syne, sans-serif', fontSize: 'clamp(32px, 5vw, 56px)', fontWeight: 800, lineHeight: 1.1, marginBottom: 16, letterSpacing: '-0.02em' }}>
             Todo lo que tu marca{' '}
-            <span style={{ background: 'linear-gradient(135deg, #F97316, #FBBF24)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>necesita</span>
+            <span style={{ background: 'linear-gradient(135deg, #2563EB, #60A5FA)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>necesita</span>
           </h2>
           <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: 17, maxWidth: 520, lineHeight: 1.7 }}>
             9 tipos de fabricación con tecnología de punta y acabados premium para la industria textil colombiana.
@@ -84,8 +84,8 @@ export default function Services() {
           <a
             href="https://api.whatsapp.com/send?phone=573134982178"
             target="_blank" rel="noopener noreferrer"
-            style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: '#F97316', color: '#fff', padding: '14px 32px', borderRadius: 100, fontSize: 15, fontWeight: 700, textDecoration: 'none', transition: 'all 0.2s' }}
-            onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.04)'; e.currentTarget.style.boxShadow = '0 16px 48px rgba(249,115,22,0.35)' }}
+            style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: '#2563EB', color: '#fff', padding: '14px 32px', borderRadius: 100, fontSize: 15, fontWeight: 700, textDecoration: 'none', transition: 'all 0.2s' }}
+            onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.04)'; e.currentTarget.style.boxShadow = '0 16px 48px rgba(37,99,235,0.35)' }}
             onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = 'none' }}
           >
             Solicitar cotización ↗

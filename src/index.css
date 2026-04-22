@@ -3,8 +3,8 @@
 @theme {
   --font-sans: 'Inter', system-ui, sans-serif;
   --font-display: 'Syne', system-ui, sans-serif;
-  --color-brand: #F97316;
-  --color-brand-dark: #EA580C;
+  --color-brand: #2563EB;
+  --color-brand-dark: #1D4ED8;
   --color-surface: #111111;
   --color-surface-2: #1A1A1A;
 }
@@ -23,4 +23,4 @@ body {
 
 ::-webkit-scrollbar { width: 3px; }
 ::-webkit-scrollbar-track { background: #0A0A0A; }
-::-webkit-scrollbar-thumb { background: #F97316; border-radius: 2px; }
+::-webkit-scrollbar-thumb { background: #2563EB; border-radius: 2px; }

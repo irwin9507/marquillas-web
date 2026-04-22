@@ -25,7 +25,7 @@ export default function Hero() {
         />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(10,10,10,0.5), rgba(10,10,10,0.3) 40%, #0A0A0A)' }} />
         {/* Glow */}
-        <div style={{ position: 'absolute', top: '40%', left: '30%', width: 600, height: 600, borderRadius: '50%', background: 'rgba(249,115,22,0.08)', filter: 'blur(100px)', transform: 'translate(-50%,-50%)' }} />
+        <div style={{ position: 'absolute', top: '40%', left: '30%', width: 600, height: 600, borderRadius: '50%', background: 'rgba(37,99,235,0.08)', filter: 'blur(100px)', transform: 'translate(-50%,-50%)' }} />
       </div>
 
       <div style={{ position: 'relative', zIndex: 1, maxWidth: 1280, margin: '0 auto', padding: '60px 24px', width: '100%', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }} className="hero-grid">
@@ -49,7 +49,7 @@ export default function Hero() {
           >
             Marquillas
             <br />
-            <span style={{ background: 'linear-gradient(135deg, #F97316, #FBBF24)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+            <span style={{ background: 'linear-gradient(135deg, #2563EB, #60A5FA)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
               &amp; Etiquetas
             </span>
             <br />
@@ -70,8 +70,8 @@ export default function Hero() {
             <a
               href="https://api.whatsapp.com/send?phone=573134982178"
               target="_blank" rel="noopener noreferrer"
-              style={{ background: '#F97316', color: '#fff', padding: '14px 28px', borderRadius: 100, fontSize: 15, fontWeight: 700, textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 8, transition: 'all 0.2s' }}
-              onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.04)'; e.currentTarget.style.boxShadow = '0 12px 40px rgba(249,115,22,0.35)' }}
+              style={{ background: '#2563EB', color: '#fff', padding: '14px 28px', borderRadius: 100, fontSize: 15, fontWeight: 700, textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 8, transition: 'all 0.2s' }}
+              onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.04)'; e.currentTarget.style.boxShadow = '0 12px 40px rgba(37,99,235,0.35)' }}
               onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = 'none' }}
             >
               Pedir cotización →
@@ -93,7 +93,7 @@ export default function Hero() {
           >
             {stats.map(s => (
               <div key={s.label}>
-                <div style={{ fontFamily: 'Syne, sans-serif', fontSize: 30, fontWeight: 800, background: 'linear-gradient(135deg, #F97316, #FBBF24)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>{s.value}</div>
+                <div style={{ fontFamily: 'Syne, sans-serif', fontSize: 30, fontWeight: 800, background: 'linear-gradient(135deg, #2563EB, #60A5FA)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>{s.value}</div>
                 <div style={{ color: 'rgba(255,255,255,0.4)', fontSize: 12, marginTop: 4 }}>{s.label}</div>
               </div>
             ))}
@@ -134,7 +134,7 @@ export default function Hero() {
         <span style={{ color: 'rgba(255,255,255,0.25)', fontSize: 11, letterSpacing: '0.12em', textTransform: 'uppercase' }}>scroll</span>
         <motion.div
           animate={{ y: [0, 8, 0] }} transition={{ repeat: Infinity, duration: 1.6 }}
-          style={{ width: 2, height: 36, background: 'linear-gradient(to bottom, #F97316, transparent)', borderRadius: 1 }}
+          style={{ width: 2, height: 36, background: 'linear-gradient(to bottom, #2563EB, transparent)', borderRadius: 1 }}
         />
       </motion.div>
 

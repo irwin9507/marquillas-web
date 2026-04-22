@@ -53,12 +53,12 @@ export default function Navbar() {
               href="https://api.whatsapp.com/send?phone=573134982178"
               target="_blank" rel="noopener noreferrer"
               style={{
-                background: '#F97316', color: '#fff', padding: '10px 22px',
+                background: '#2563EB', color: '#fff', padding: '10px 22px',
                 borderRadius: 100, fontSize: 14, fontWeight: 600, textDecoration: 'none',
                 transition: 'transform 0.2s, background 0.2s',
               }}
-              onMouseEnter={e => { e.target.style.transform = 'scale(1.05)'; e.target.style.background = '#EA580C' }}
-              onMouseLeave={e => { e.target.style.transform = 'scale(1)'; e.target.style.background = '#F97316' }}
+              onMouseEnter={e => { e.target.style.transform = 'scale(1.05)'; e.target.style.background = '#1D4ED8' }}
+              onMouseLeave={e => { e.target.style.transform = 'scale(1)'; e.target.style.background = '#2563EB' }}
             >
               Cotizar →
             </a>
@@ -100,7 +100,7 @@ export default function Navbar() {
             <a
               href="https://api.whatsapp.com/send?phone=573134982178"
               target="_blank" rel="noopener noreferrer"
-              style={{ background: '#F97316', color: '#fff', padding: '14px 36px', borderRadius: 100, fontSize: 18, fontWeight: 700, textDecoration: 'none', marginTop: 16 }}
+              style={{ background: '#2563EB', color: '#fff', padding: '14px 36px', borderRadius: 100, fontSize: 18, fontWeight: 700, textDecoration: 'none', marginTop: 16 }}
             >
               Cotizar ahora
             </a>

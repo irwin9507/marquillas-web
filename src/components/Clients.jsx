@@ -23,12 +23,12 @@ export default function Clients() {
           initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           style={{ textAlign: 'center', marginBottom: 60 }}
         >
-          <div style={{ display: 'inline-block', background: 'rgba(249,115,22,0.1)', border: '1px solid rgba(249,115,22,0.25)', color: '#F97316', fontSize: 11, fontWeight: 700, padding: '6px 16px', borderRadius: 100, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 20 }}>
+          <div style={{ display: 'inline-block', background: 'rgba(37,99,235,0.1)', border: '1px solid rgba(37,99,235,0.25)', color: '#2563EB', fontSize: 11, fontWeight: 700, padding: '6px 16px', borderRadius: 100, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 20 }}>
             Ellos confiaron en nosotros
           </div>
           <h2 style={{ fontFamily: 'Syne, sans-serif', fontSize: 'clamp(28px, 4vw, 48px)', fontWeight: 800, lineHeight: 1.1, marginBottom: 16, letterSpacing: '-0.02em' }}>
             Marcas que eligen{' '}
-            <span style={{ background: 'linear-gradient(135deg, #F97316, #FBBF24)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>calidad</span>
+            <span style={{ background: 'linear-gradient(135deg, #2563EB, #60A5FA)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>calidad</span>
           </h2>
           <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: 16, maxWidth: 480, margin: '0 auto', lineHeight: 1.7 }}>
             Empresas líderes de la industria textil colombiana nos eligen para dar identidad a sus productos.
@@ -55,7 +55,7 @@ export default function Clients() {
                 background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)',
                 borderRadius: 16, padding: '0 24px', transition: 'border-color 0.2s',
               }}
-              onMouseEnter={e => e.currentTarget.style.borderColor = 'rgba(249,115,22,0.25)'}
+              onMouseEnter={e => e.currentTarget.style.borderColor = 'rgba(37,99,235,0.25)'}
               onMouseLeave={e => e.currentTarget.style.borderColor = 'rgba(255,255,255,0.07)'}
             >
               <img src={logo.url} alt={logo.name} style={{ maxHeight: 44, maxWidth: 120, objectFit: 'contain', filter: 'brightness(0.65)', transition: 'filter 0.2s' }}
@@ -77,8 +77,8 @@ export default function Clients() {
             padding: '48px 56px', textAlign: 'center', position: 'relative', overflow: 'hidden',
           }}
         >
-          <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at 50% 0%, rgba(249,115,22,0.06), transparent 60%)', pointerEvents: 'none' }} />
-          <div style={{ fontFamily: 'Syne, sans-serif', fontSize: 64, color: '#F97316', lineHeight: 0.8, marginBottom: 24, position: 'relative' }}>"</div>
+          <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at 50% 0%, rgba(37,99,235,0.06), transparent 60%)', pointerEvents: 'none' }} />
+          <div style={{ fontFamily: 'Syne, sans-serif', fontSize: 64, color: '#2563EB', lineHeight: 0.8, marginBottom: 24, position: 'relative' }}>"</div>
           <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: 18, lineHeight: 1.75, maxWidth: 600, margin: '0 auto 20px', position: 'relative' }}>
             La calidad de sus marquillas le da un valor diferencial increíble a nuestras prendas. El equipo siempre cumple con los tiempos y supera nuestras expectativas.
           </p>
