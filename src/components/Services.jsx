@@ -1,5 +1,6 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
+import WhatsAppIcon from './WhatsAppIcon'
 
 const services = [
   { name: 'Impresión DTF', tag: 'POPULAR', desc: 'Transferencia directa con colores vibrantes y alta durabilidad para cualquier tela.', img: 'https://www.marquillasyetiquetas.co/wp-content/uploads/2025/03/Estampados.jpg' },
@@ -88,7 +89,7 @@ export default function Services() {
             onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.04)'; e.currentTarget.style.boxShadow = '0 16px 48px rgba(37,99,235,0.35)' }}
             onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = 'none' }}
           >
-            Solicitar cotización ↗
+            <WhatsAppIcon size={18} color="#fff" /> Solicitar cotización
           </a>
         </motion.div>
       </div>

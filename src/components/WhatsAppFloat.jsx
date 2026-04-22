@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import WhatsAppIcon from './WhatsAppIcon'
 
 export default function WhatsAppFloat() {
   return (
@@ -16,10 +17,10 @@ export default function WhatsAppFloat() {
         background: '#22C55E',
         display: 'flex', alignItems: 'center', justifyContent: 'center',
         boxShadow: '0 8px 32px rgba(34,197,94,0.45)',
-        textDecoration: 'none', fontSize: 26,
+        textDecoration: 'none',
       }}
     >
-      💬
+      <WhatsAppIcon size={28} color="#fff" />
       <motion.span
         animate={{ scale: [1, 1.6, 1], opacity: [0.5, 0, 0.5] }}
         transition={{ repeat: Infinity, duration: 2 }}

@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import WhatsAppIcon from './WhatsAppIcon'
 
 const stats = [
   { value: '+20', label: 'Años de experiencia' },
@@ -62,7 +63,7 @@ export default function Hero() {
               onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.04)'; e.currentTarget.style.boxShadow = '0 12px 40px rgba(37,99,235,0.35)' }}
               onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = 'none' }}
             >
-              Pedir cotización →
+              <WhatsAppIcon size={18} color="#fff" /> Pedir cotización
             </a>
             <a
               href="#servicios"

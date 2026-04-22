@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import WhatsAppIcon from './WhatsAppIcon'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -60,7 +61,7 @@ export default function Navbar() {
               onMouseEnter={e => { e.target.style.transform = 'scale(1.05)'; e.target.style.background = '#1D4ED8' }}
               onMouseLeave={e => { e.target.style.transform = 'scale(1)'; e.target.style.background = '#2563EB' }}
             >
-              Cotizar →
+              <WhatsAppIcon size={16} color="#fff" /> Cotizar
             </a>
           </div>
 
@@ -102,7 +103,7 @@ export default function Navbar() {
               target="_blank" rel="noopener noreferrer"
               style={{ background: '#2563EB', color: '#fff', padding: '14px 36px', borderRadius: 100, fontSize: 18, fontWeight: 700, textDecoration: 'none', marginTop: 16 }}
             >
-              Cotizar ahora
+              <WhatsAppIcon size={20} color="#fff" /> Cotizar ahora
             </a>
           </motion.div>
         )}

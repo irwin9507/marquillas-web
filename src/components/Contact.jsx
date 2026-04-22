@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import WhatsAppIcon from './WhatsAppIcon'
 
 function InfoRow({ emoji, label, value, href }) {
   const inner = (
@@ -54,7 +55,7 @@ export default function Contact() {
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-              <InfoRow emoji="💬" label="WhatsApp" value="+57 313 498 2178" href="https://api.whatsapp.com/send?phone=573134982178" />
+              <InfoRow emoji={<WhatsAppIcon size={22} color="#25D366" />} label="WhatsApp" value="+57 313 498 2178" href="https://api.whatsapp.com/send?phone=573134982178" />
               <InfoRow emoji="📞" label="Teléfonos" value="+57 313 498 2178 · +57 302 705 3531 · +57 302 861 5976" />
               <InfoRow emoji="✉️" label="Email" value="disenodtf@gmail.com" href="mailto:disenodtf@gmail.com" />
               <InfoRow emoji="📍" label="Dirección" value="Cll 19 Sur #24G-15 · Bogotá D.C, Colombia" />
@@ -73,7 +74,7 @@ export default function Contact() {
                 onMouseEnter={e => e.currentTarget.style.borderColor = 'rgba(72,199,116,0.4)'}
                 onMouseLeave={e => e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)'}
               >
-                💬 WhatsApp
+                <WhatsAppIcon size={15} color="#25D366" /> WhatsApp
               </a>
             </div>
           </motion.div>
@@ -126,7 +127,7 @@ export default function Contact() {
                   onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.02)'; e.currentTarget.style.boxShadow = '0 12px 40px rgba(37,99,235,0.4)' }}
                   onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = 'none' }}
                 >
-                  💬 Enviar por WhatsApp
+                  <WhatsAppIcon size={18} color="#fff" /> Enviar por WhatsApp
                 </button>
                 <p style={{ color: 'rgba(255,255,255,0.3)', fontSize: 12, textAlign: 'center' }}>Te respondemos en menos de 24 horas hábiles</p>
               </form>

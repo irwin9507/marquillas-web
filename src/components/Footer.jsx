@@ -1,3 +1,5 @@
+import WhatsAppIcon from './WhatsAppIcon'
+
 export default function Footer() {
   const serviceLinks = ['Impresión DTF', 'Microinyección', 'Corte Láser', 'Repujado', 'Parches Textiles', 'CNC', 'Estampados']
 
@@ -15,7 +17,7 @@ export default function Footer() {
             </p>
             <div style={{ display: 'flex', gap: 10 }}>
               {[
-                { href: 'https://api.whatsapp.com/send?phone=573134982178', label: '💬' },
+                { href: 'https://api.whatsapp.com/send?phone=573134982178', label: <WhatsAppIcon size={18} color="#25D366" /> },
                 { href: 'https://www.instagram.com/marquillas_etiquetas/', label: '📸' },
               ].map(s => (
                 <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
