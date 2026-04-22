@@ -31,18 +31,6 @@ export default function Hero() {
       <div style={{ position: 'relative', zIndex: 1, maxWidth: 1280, margin: '0 auto', padding: '60px 24px', width: '100%', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }} className="hero-grid">
         {/* Copy */}
         <div>
-          {/* Logo */}
-          <motion.div
-            initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
-            style={{ marginBottom: 28 }}
-          >
-            <img
-              src="https://www.marquillasyetiquetas.co/wp-content/uploads/2025/03/Logo-Marka-Minimalista.png"
-              alt="Marquillas y Etiquetas"
-              style={{ height: 64, objectFit: 'contain', borderRadius: 10, boxShadow: '0 4px 24px rgba(0,0,0,0.4)' }}
-            />
-          </motion.div>
-
           <motion.h1
             initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
             style={{ fontFamily: 'Syne, sans-serif', fontSize: 'clamp(42px, 6vw, 72px)', fontWeight: 800, lineHeight: 1.05, marginBottom: 24, letterSpacing: '-0.02em' }}
