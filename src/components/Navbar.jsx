@@ -1,120 +1,197 @@
 import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence, useScroll } from 'framer-motion'
+import { Menu, X } from 'lucide-react'
 import WhatsAppIcon from './WhatsAppIcon'
+
+const links = [
+  { label: 'Servicios', href: '#servicios' },
+  { label: 'Nosotros', href: '#nosotros' },
+  { label: 'Clientes', href: '#clientes' },
+  { label: 'Contacto', href: '#contacto' },
+]
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+  const { scrollYProgress } = useScroll()
 
   useEffect(() => {
-    const fn = () => setScrolled(window.scrollY > 50)
-    window.addEventListener('scroll', fn)
-    return () => window.removeEventListener('scroll', fn)
+    const onScroll = () => setScrolled(window.scrollY > 80)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const links = ['Servicios', 'Nosotros', 'Clientes', 'Contacto']
+  const navBg = scrolled
+    ? 'rgba(13,13,13,0.92)'
+    : 'transparent'
+  const navBorder = scrolled
+    ? '1px solid rgba(255,255,255,0.08)'
+    : '1px solid transparent'
+  const navRadius = scrolled ? 18 : 0
+  const navMaxW = scrolled ? 720 : 1280
+  const navShadow = scrolled ? '0 8px 32px rgba(0,0,0,0.55)' : 'none'
 
   return (
     <>
-      <motion.nav
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.5 }}
+      {/* Scroll progress bar */}
+      <motion.div
         style={{
-          position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
-          transition: 'background 0.4s, backdrop-filter 0.4s',
-          background: scrolled ? 'rgba(10,10,10,0.85)' : 'transparent',
-          backdropFilter: scrolled ? 'blur(20px)' : 'none',
-          borderBottom: scrolled ? '1px solid rgba(255,255,255,0.06)' : 'none',
+          scaleX: scrollYProgress,
+          position: 'fixed', top: 0, left: 0, right: 0,
+          height: 2, background: '#2563EB', transformOrigin: 'left', zIndex: 200,
         }}
-      >
-        <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 24px', height: 72, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <a href="#inicio">
+      />
+
+      {/* Nav wrapper */}
+      <div style={{
+        position: 'fixed', top: 12, left: 0, right: 0,
+        zIndex: 100, display: 'flex', justifyContent: 'center', padding: '0 16px',
+      }}>
+        <motion.nav
+          initial={{ y: -80, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.7, ease: [0.25, 0.4, 0.25, 1], delay: 0.1 }}
+          style={{
+            display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+            padding: '0 20px', height: 56, width: '100%',
+            maxWidth: navMaxW, background: navBg, border: navBorder,
+            borderRadius: navRadius, backdropFilter: scrolled ? 'blur(24px)' : 'none',
+            boxShadow: navShadow,
+            transition: 'max-width 0.5s ease, background 0.4s, border-color 0.4s, border-radius 0.4s, backdrop-filter 0.4s, box-shadow 0.4s',
+          }}
+        >
+          {/* Logo */}
+          <a href="#inicio" style={{ flexShrink: 0 }}>
             <img
               src="https://www.marquillasyetiquetas.co/wp-content/uploads/2025/03/Logo-Marka-Minimalista.png"
               alt="Marquillas y Etiquetas"
-              style={{ height: 44, objectFit: 'contain' }}
+              style={{ height: 36, objectFit: 'contain' }}
             />
           </a>
 
-          {/* Desktop */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: 36 }} className="hidden-mobile">
+          {/* Desktop links */}
+          <div className="nav-links" style={{ display: 'flex', alignItems: 'center', gap: 32 }}>
             {links.map(l => (
               <a
-                key={l}
-                href={`#${l.toLowerCase()}`}
-                style={{ color: 'rgba(255,255,255,0.55)', fontSize: 14, fontWeight: 500, textDecoration: 'none', transition: 'color 0.2s', letterSpacing: '0.02em' }}
+                key={l.label}
+                href={l.href}
+                style={{
+                  color: 'rgba(255,255,255,0.55)', fontSize: 13, fontWeight: 500,
+                  textDecoration: 'none', letterSpacing: '0.02em', transition: 'color 0.2s', cursor: 'pointer',
+                }}
                 onMouseEnter={e => e.target.style.color = '#fff'}
                 onMouseLeave={e => e.target.style.color = 'rgba(255,255,255,0.55)'}
               >
-                {l}
+                {l.label}
               </a>
             ))}
+          </div>
+
+          {/* CTA + hamburger */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
             <a
               href="https://api.whatsapp.com/send?phone=573134982178"
               target="_blank" rel="noopener noreferrer"
+              className="nav-cta"
               style={{
-                background: '#2563EB', color: '#fff', padding: '10px 22px',
-                borderRadius: 100, fontSize: 14, fontWeight: 600, textDecoration: 'none',
-                transition: 'transform 0.2s, background 0.2s',
+                display: 'inline-flex', alignItems: 'center', gap: 6,
+                background: '#2563EB', color: '#fff', fontSize: 13, fontWeight: 600,
+                padding: '8px 18px', borderRadius: 100, textDecoration: 'none',
+                transition: 'background 0.2s, transform 0.2s, box-shadow 0.2s', cursor: 'pointer',
               }}
-              onMouseEnter={e => { e.target.style.transform = 'scale(1.05)'; e.target.style.background = '#1D4ED8' }}
-              onMouseLeave={e => { e.target.style.transform = 'scale(1)'; e.target.style.background = '#2563EB' }}
+              onMouseEnter={e => {
+                e.currentTarget.style.background = '#1D4ED8'
+                e.currentTarget.style.transform = 'scale(1.04)'
+                e.currentTarget.style.boxShadow = '0 6px 20px rgba(37,99,235,0.45)'
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.background = '#2563EB'
+                e.currentTarget.style.transform = 'scale(1)'
+                e.currentTarget.style.boxShadow = 'none'
+              }}
             >
-              <WhatsAppIcon size={16} color="#fff" /> Cotizar
+              <WhatsAppIcon size={13} color="#fff" />
+              Cotizar
             </a>
+            <button
+              onClick={() => setOpen(v => !v)}
+              className="nav-burger"
+              style={{
+                background: 'none', border: 'none', color: 'rgba(255,255,255,0.7)',
+                cursor: 'pointer', padding: 8, display: 'none',
+              }}
+              aria-label="Menú"
+            >
+              {open ? <X size={20} /> : <Menu size={20} />}
+            </button>
           </div>
-
-          {/* Mobile hamburger */}
-          <button
-            onClick={() => setOpen(!open)}
-            style={{ background: 'none', border: 'none', color: '#fff', cursor: 'pointer', padding: 8 }}
-            className="show-mobile"
-          >
-            <div style={{ width: 24, height: 2, background: '#fff', marginBottom: 5, transition: 'transform 0.2s', transform: open ? 'rotate(45deg) translate(5px,5px)' : 'none' }} />
-            <div style={{ width: 24, height: 2, background: '#fff', marginBottom: 5, opacity: open ? 0 : 1, transition: 'opacity 0.2s' }} />
-            <div style={{ width: 24, height: 2, background: '#fff', transition: 'transform 0.2s', transform: open ? 'rotate(-45deg) translate(5px,-5px)' : 'none' }} />
-          </button>
-        </div>
-      </motion.nav>
+        </motion.nav>
+      </div>
 
       {/* Mobile menu */}
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             style={{
-              position: 'fixed', inset: 0, zIndex: 99,
-              background: 'rgba(10,10,10,0.97)', backdropFilter: 'blur(20px)',
-              display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 32,
+              position: 'fixed', inset: 0, zIndex: 98,
+              background: 'rgba(5,5,5,0.97)', backdropFilter: 'blur(24px)',
+              display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
             }}
           >
-            {links.map(l => (
-              <a
-                key={l} href={`#${l.toLowerCase()}`}
-                onClick={() => setOpen(false)}
-                style={{ color: '#fff', fontSize: 32, fontFamily: 'Syne, sans-serif', fontWeight: 700, textDecoration: 'none' }}
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4, width: '100%', maxWidth: 320, padding: '0 32px' }}>
+              {links.map((l, i) => (
+                <motion.a
+                  key={l.label}
+                  href={l.href}
+                  onClick={() => setOpen(false)}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.07 }}
+                  style={{
+                    display: 'block', width: '100%', textAlign: 'center',
+                    padding: '18px 0', fontSize: 26, fontFamily: 'Syne, sans-serif',
+                    fontWeight: 700, color: 'rgba(255,255,255,0.75)', textDecoration: 'none',
+                    borderBottom: '1px solid rgba(255,255,255,0.07)', cursor: 'pointer',
+                    transition: 'color 0.2s',
+                  }}
+                  onMouseEnter={e => e.currentTarget.style.color = '#fff'}
+                  onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.75)'}
+                >
+                  {l.label}
+                </motion.a>
+              ))}
+              <motion.a
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.32 }}
+                href="https://api.whatsapp.com/send?phone=573134982178"
+                target="_blank" rel="noopener noreferrer"
+                style={{
+                  marginTop: 28, width: '100%', display: 'flex', alignItems: 'center',
+                  justifyContent: 'center', gap: 8, background: '#2563EB', color: '#fff',
+                  padding: '16px', borderRadius: 18, fontWeight: 700, fontSize: 15,
+                  textDecoration: 'none', cursor: 'pointer',
+                }}
               >
-                {l}
-              </a>
-            ))}
-            <a
-              href="https://api.whatsapp.com/send?phone=573134982178"
-              target="_blank" rel="noopener noreferrer"
-              style={{ background: '#2563EB', color: '#fff', padding: '14px 36px', borderRadius: 100, fontSize: 18, fontWeight: 700, textDecoration: 'none', marginTop: 16 }}
-            >
-              <WhatsAppIcon size={20} color="#fff" /> Cotizar ahora
-            </a>
+                <WhatsAppIcon size={18} color="#fff" />
+                Cotizar ahora
+              </motion.a>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
 
       <style>{`
-        .hidden-mobile { display: flex !important; }
-        .show-mobile { display: none !important; }
+        .nav-links { display: flex !important; }
+        .nav-cta { display: inline-flex !important; }
+        .nav-burger { display: none !important; }
         @media (max-width: 768px) {
-          .hidden-mobile { display: none !important; }
-          .show-mobile { display: block !important; }
+          .nav-links { display: none !important; }
+          .nav-cta { display: none !important; }
+          .nav-burger { display: flex !important; }
         }
       `}</style>
     </>
